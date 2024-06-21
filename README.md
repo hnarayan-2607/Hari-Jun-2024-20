@@ -1,4 +1,4 @@
-# Generic Instructions
+# GENERIC INSTRUCTIONS
 
 
 Here are the step-by-step instructions to achieve the desired result using Terraform and Docker:

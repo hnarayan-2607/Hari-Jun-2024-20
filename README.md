@@ -24,7 +24,7 @@ Here are the step-by-step instructions to achieve the desired result using Terra
    
 
 3. *Create backend.tf for remote state management*:
-    hcl
+    
         systemctl enable httpd"s3" {
         bucket         = "my-terraform-state-bucket"
         key            = "path/to/my/key"

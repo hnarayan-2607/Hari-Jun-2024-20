@@ -69,10 +69,10 @@ resource "aws_instance" "linux_ec2" {
                 usermod -a -G docker ec2-user
                 docker run -d -p 80:80 --name mycontainer \
                   -e POSTGRES_HOST=${aws_db_instance.postgres.endpoint} \
-                  -e POSTGRES_DB=mydb \
-                  -e POSTGRES_USER=admin \
-                  -e POSTGRES_PASSWORD=password \
-                  djha736/ec2-rds:latest
+                  -e POSTGRES_DB=Postrdsdb1 \
+                  -e POSTGRES_USER=Hari \
+                  -e POSTGRES_PASSWORD=Hari1234 \
+                  harivenkatesh/terraform-aws-project:1.0
               EOF
 }
 
@@ -80,11 +80,11 @@ resource "aws_instance" "linux_ec2" {
 resource "aws_db_instance" "postgres" {
   allocated_storage    = 20
   engine               = "postgres"
-  instance_class       = "db.t2.micro"
-  db_name              = "post-rds-db"
-  username             = "admin"
-  password             = "Hari-test"
-  parameter_group_name = "default.postgres10"
+  instance_class       = "db.t3.micro"
+  db_name              = "Postrdsdb1"
+  username             = "Hari"
+  password             = "Hari1234"
+  parameter_group_name = "default.postgres16"
   skip_final_snapshot  = true
   publicly_accessible  = true
   vpc_security_group_ids = [aws_security_group.rds_sg.id]
